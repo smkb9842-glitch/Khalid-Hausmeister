@@ -169,6 +169,13 @@
         height: auto;
       }
 
+      .hero-badges {
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
       .heading {
         margin: 0 0 4px;
         font-size: clamp(26px, 3vw, 36px);
@@ -213,6 +220,77 @@
         margin: 0;
         color: var(--muted);
         line-height: 1.5;
+      }
+
+      .section-visual {
+        padding: 16px;
+        overflow: hidden;
+      }
+
+      .section-visual svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .process-card {
+        padding: 18px;
+      }
+
+      .step-number {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+
+      .process-card h3 {
+        margin: 0 0 6px;
+        font-size: 18px;
+      }
+
+      .process-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .project-card {
+        padding: 14px;
+      }
+
+      .project-card h3 {
+        margin: 0 0 8px;
+      }
+
+      .project-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .project-thumb {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 10px;
+        border: 1px solid var(--border);
       }
 
       .contact {
@@ -291,7 +369,9 @@
         }
 
         .kpi-grid,
-        .services {
+        .services,
+        .process-grid,
+        .projects-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
@@ -302,7 +382,9 @@
         }
 
         .kpi-grid,
-        .services {
+        .services,
+        .process-grid,
+        .projects-grid {
           grid-template-columns: 1fr;
         }
       }
@@ -329,6 +411,11 @@
             Kleinreparaturen. Mit festen Intervallen, klarer Kommunikation und transparenter
             Leistungserfassung.
           </p>
+          <div class="hero-badges">
+            <span class="pill">Versichert</span>
+            <span class="pill">Geschulte Mitarbeiter</span>
+            <span class="pill">Dokumentierte Einsaetze</span>
+          </div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#kontakt">Kostenlose Anfrage</a>
             <a class="btn btn-secondary" href="#leistungen">Leistungen ansehen</a>
@@ -357,6 +444,18 @@
         </div>
       </section>
 
+      <section>
+        <div class="card section-visual" aria-hidden="true">
+          <svg viewBox="0 0 1120 170" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1120" height="170" fill="#f7fbff" />
+            <path d="M0 125 C180 95, 320 160, 500 126 C690 88, 870 146, 1120 110 L1120 170 L0 170 Z" fill="#d8e7fd" />
+            <path d="M0 140 C210 108, 360 172, 560 135 C760 95, 930 160, 1120 130 L1120 170 L0 170 Z" fill="#d9f2e8" />
+            <circle cx="112" cy="52" r="18" fill="#27b783" />
+            <circle cx="1002" cy="42" r="14" fill="#1d4f9c" />
+          </svg>
+        </div>
+      </section>
+
       <section id="leistungen">
         <h2 class="heading">Unsere Leistungen</h2>
         <p class="sub">Massgeschneiderte Betreuung fuer private, gewerbliche und WEG-Objekte.</p>
@@ -367,6 +466,76 @@
           <article class="card service"><h3>Winterdienst</h3><p>Raeumen und Streuen fuer sichere Wege, Einfahrten und Eingangsbereiche.</p></article>
           <article class="card service"><h3>Muelltonnenservice</h3><p>Termingerechtes Bereitstellen und Rueckstellen aller Behaelter.</p></article>
           <article class="card service"><h3>Objektkontrolle</h3><p>Regelmaessige Kontrollgaenge mit direkter Rueckmeldung bei Auffaelligkeiten.</p></article>
+        </div>
+      </section>
+
+      <section id="ablauf">
+        <h2 class="heading">So arbeiten wir</h2>
+        <p class="sub">Klarer Ablauf von der Anfrage bis zur laufenden Betreuung.</p>
+        <div class="process-grid">
+          <article class="card process-card">
+            <div class="step-number">1</div>
+            <h3>Kontaktaufnahme</h3>
+            <p>Sie senden Ihre Anfrage mit Eckdaten zum Objekt und gewuenschten Leistungen.</p>
+          </article>
+          <article class="card process-card">
+            <div class="step-number">2</div>
+            <h3>Besichtigung</h3>
+            <p>Wir analysieren vor Ort den Bedarf und empfehlen ein passendes Leistungspaket.</p>
+          </article>
+          <article class="card process-card">
+            <div class="step-number">3</div>
+            <h3>Angebot</h3>
+            <p>Sie erhalten ein transparentes Angebot mit klaren Intervallen und Preisen.</p>
+          </article>
+          <article class="card process-card">
+            <div class="step-number">4</div>
+            <h3>Umsetzung</h3>
+            <p>Unser Team startet verbindlich und dokumentiert die durchgefuehrten Arbeiten.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="objekte">
+        <h2 class="heading">Betreute Objektarten</h2>
+        <p class="sub">Erfahrung in unterschiedlichen Immobilien und Nutzungsarten.</p>
+        <div class="projects-grid">
+          <article class="card project-card">
+            <svg class="project-thumb" viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="360" height="160" fill="#ecf5ff" />
+              <rect x="40" y="48" width="100" height="88" fill="#ffffff" stroke="#bad0ec" />
+              <rect x="148" y="36" width="78" height="100" fill="#ffffff" stroke="#bad0ec" />
+              <rect x="234" y="60" width="88" height="76" fill="#ffffff" stroke="#bad0ec" />
+              <rect y="136" width="360" height="24" fill="#d9f2e8" />
+            </svg>
+            <h3>Mehrfamilienhaeuser</h3>
+            <p>Regelservice fuer Treppenhaus, Aussenflaechen und technische Checks.</p>
+          </article>
+          <article class="card project-card">
+            <svg class="project-thumb" viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="360" height="160" fill="#eef7ff" />
+              <rect x="40" y="58" width="280" height="78" fill="#ffffff" stroke="#bad0ec" />
+              <rect x="64" y="76" width="36" height="20" fill="#d9e9ff" />
+              <rect x="112" y="76" width="36" height="20" fill="#d9e9ff" />
+              <rect x="160" y="76" width="36" height="20" fill="#d9e9ff" />
+              <rect x="208" y="76" width="36" height="20" fill="#d9e9ff" />
+              <rect y="136" width="360" height="24" fill="#d9f2e8" />
+            </svg>
+            <h3>Gewerbeobjekte</h3>
+            <p>Puenktliche und diskrete Betreuung fuer Bueros und Geschaeftsflaechen.</p>
+          </article>
+          <article class="card project-card">
+            <svg class="project-thumb" viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="360" height="160" fill="#edf6ff" />
+              <circle cx="70" cy="58" r="24" fill="#2abf88" />
+              <rect x="120" y="42" width="196" height="94" fill="#ffffff" stroke="#bad0ec" />
+              <rect x="146" y="66" width="58" height="16" fill="#d9e9ff" />
+              <rect x="146" y="90" width="136" height="12" fill="#e9f2ff" />
+              <rect y="136" width="360" height="24" fill="#d9f2e8" />
+            </svg>
+            <h3>WEG und Sonderobjekte</h3>
+            <p>Flexible Betreuung mit abgestimmten Intervallen und festen Ansprechpersonen.</p>
+          </article>
         </div>
       </section>
 
